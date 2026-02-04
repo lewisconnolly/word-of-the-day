@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover a new uncommon English word every day with its definition, pronunciation, and usage.">
+  <title>Word of the Day</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <h1 tabindex="-1">Word of the Day</h1>
+  </header>
+
+  <main id="main-content">
+    <!-- Main View -->
+    <section id="view-main" aria-label="Today's word">
+      <div id="loading" role="status" class="state-message">
+        <span class="spinner" aria-hidden="true"></span>
+        Loading word&hellip;
+      </div>
+
+      <div id="error" class="state-message hidden" role="alert">
+        <p id="error-message">Something went wrong.</p>
+        <button id="btn-retry" class="btn btn-secondary">Try Again</button>
+      </div>
+
+      <article id="word-card" class="word-card hidden" aria-live="polite">
+        <h2 id="word-text" class="word-text" tabindex="-1"></h2>
+        <p id="word-phonetic" class="word-phonetic"></p>
+        <div id="word-meanings" class="word-meanings"></div>
+      </article>
+
+      <nav class="actions" aria-label="Word actions">
+        <button id="btn-new-word" class="btn btn-primary">New Word</button>
+        <button id="btn-show-history" class="btn btn-link">Previous Words &rarr;</button>
+      </nav>
+    </section>
+
+    <!-- History View -->
+    <section id="view-history" class="hidden" aria-label="Word history">
+      <h2 tabindex="-1">Previous Words</h2>
+      <ul id="history-list" class="history-list"></ul>
+      <p id="history-empty" class="state-message hidden">No words viewed yet.</p>
+      <nav class="actions" aria-label="History actions">
+        <button id="btn-back" class="btn btn-link">&larr; Back</button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="words.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
